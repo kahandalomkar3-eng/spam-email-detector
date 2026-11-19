@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email History | Spam Email Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand-mark" href="index.html">ShieldInbox</a>
+        <nav class="top-nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">Detector</a>
+            <a class="nav-link active" href="history.html">History</a>
+        </nav>
+    </header>
+
+    <main class="history-shell">
+        <section class="history-panel">
+            <div class="history-toolbar">
+                <div class="history-panel-head">
+                    <div class="history-panel-copy">
+                        <p class="section-tag">Saved Records</p>
+                        <h1>Saved email history</h1>
+                        <p>Browse saved results, refresh the table when needed, or download the full log as CSV.</p>
+                    </div>
+
+                    <div class="history-actions">
+                        <button id="refreshBtn" class="secondary" type="button">Refresh</button>
+                        <a id="exportBtn" class="button-link" href="#">Export CSV</a>
+                    </div>
+                </div>
+
+                <div class="history-stats">
+                    <article class="stat-card">
+                        <span>Total Emails</span>
+                        <strong id="totalCount">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Spam</span>
+                        <strong id="spamCount">0</strong>
+                    </article>
+                    <article class="stat-card">
+                        <span>Safe</span>
+                        <strong id="hamCount">0</strong>
+                    </article>
+                </div>
+            </div>
+
+            <p id="historyStatus" class="status">Loading saved email history...</p>
+
+            <section id="emptyState" class="empty-state hidden">
+                <h2>No email history yet</h2>
+                <p>Analyze a message from the detector page and it will appear here automatically.</p>
+            </section>
+
+            <div id="historyTableWrap" class="table-wrap hidden">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email Message</th>
+                            <th>Label</th>
+                            <th>Confidence</th>
+                            <th>Saved At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="history.js"></script>
+</body>
+</html>

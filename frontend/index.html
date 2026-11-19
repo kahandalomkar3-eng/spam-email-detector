@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Email Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-home">
+    <header class="topbar">
+        <a class="brand-mark" href="index.html">ShieldInbox</a>
+        <nav class="top-nav" aria-label="Primary">
+            <a class="nav-link active" href="index.html">Detector</a>
+            <a class="nav-link" href="history.html">History</a>
+        </nav>
+    </header>
+
+    <main class="home-shell">
+        <section class="home-content">
+            <section class="detector-panel">
+                <div class="panel-header">
+                    <div>
+                        <h1>Analyze an email message</h1>
+                        <p>Paste the full email when possible, run a scan, and each result will be saved to history automatically.</p>
+                    </div>
+                    <span class="panel-badge">Saved to history</span>
+                </div>
+
+                <div class="chip-row">
+                    <button class="sample-chip" data-sample="spam" type="button">Try spam example</button>
+                    <button class="sample-chip" data-sample="ham" type="button">Try safe example</button>
+                </div>
+
+                <label for="emailText">Email message</label>
+                <textarea id="emailText" placeholder="Paste the email message here..."></textarea>
+
+                <div class="actions">
+                    <button id="analyzeBtn" type="button">Analyze Message</button>
+                    <button id="clearBtn" class="secondary" type="button">Clear</button>
+                </div>
+
+                <p id="status" class="status">Backend is ready when you are.</p>
+
+                <section id="result" class="result hidden" aria-live="polite">
+                    <p class="result-tag">Prediction</p>
+                    <h2 id="resultLabel">Waiting for analysis</h2>
+                    <p id="resultConfidence" class="result-confidence"></p>
+                </section>
+
+                <a class="history-shortcut" href="history.html">View saved history</a>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
